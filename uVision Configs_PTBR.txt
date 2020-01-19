@@ -1,0 +1,14 @@
+﻿Configuração do Keil uVision para usá-lo com a Stm32f103c8t6
+
+Criar novo projeto
+Escolher a placa utilizada (Stm32f103c8t6)
+Na aba run-time environment basta marcar "Device > Startut" e "CMSIS > Core"
+Organize, renomeie e crie grupos como quiser
+Clicar no seu grupo principal com o botão direito e em "Add new item/file to group" escolha "C file" e nomeie como quiser, esse será seu código principal, seu "main.c"
+Crie uma main vazia apenas para poder compilar o programa
+Compile o programa pra saber que está tudo certo até agora 
+Vá em "Flash > Configure Flash Tools" 
+Na aba "Debug" vá em "Use" e mude para ST Link V2, depois clique em "Settings", e na área "Download Options" marque "Download to Flash". Ainda em "Settings" vá na aba "Trace" e mude o Core Clock de 10Mhz para 8Mhz, e na aba "Flash Download" marque "Reset and Run" e na área "Programming Algorithm" clique na placa que você estiver usando e mude o "Size" de "0x00020000" para "0x00010000"
+Clique "OK" até voltar para a janela de "Configure Flash Tools", vá em flash e mude o "Xtal" para 8Mhz
+Clique "OK" para finalizar, seu Keil uVision está configurado
+aperte F7 para compilar e em seguida F8 para rodar o código direto na placa sem precisar mudar o bootloader da placa
